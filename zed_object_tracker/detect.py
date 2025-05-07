@@ -2,15 +2,21 @@ import rclpy
 from rclpy.node import Node
 from zed_msgs.msg import ObjectsStamped
 import torch
-import numpy as np
+import numpy as np 
+# because NP 1.20+ removed np.float and byteTracker uses it, we alias it to np.float64
+if not hasattr(np, 'float'): np.float = np.float64
 from yolox.tracker.byte_tracker import BYTETracker
 from types import SimpleNamespace
 
 class ZEDObjectTracker(Node):
     def __init__(self):
+        # arguments for the BYTETracker
         args = SimpleNamespace(
-            track_thresh=0.5,
-            track_buffer=30
+            track_thresh=0.5,   # confidence threshold for tracking a bounding box
+            track_buffer=30,    # how many frames to keep in the buffer in case of occlusion
+            match_thresh=0.8,   # confidence threshold for matching a bounding box to earlier ones for consistent ID-ing
+            mot20=False,        # we aer not using the MOT20 dataset
+            min_box_area=10,    # minimum area of a bounding box to be considered for tracking
         )
         self.tracker = BYTETracker(args, frame_rate=30)
         self.img_size = (360, 640)  
