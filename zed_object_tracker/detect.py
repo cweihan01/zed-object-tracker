@@ -4,10 +4,15 @@ from zed_msgs.msg import ObjectsStamped
 import torch
 import numpy as np
 from yolox.tracker.byte_tracker import BYTETracker
+from types import SimpleNamespace
 
 class ZEDObjectTracker(Node):
     def __init__(self):
-        self.tracker = BYTETracker()
+        args = SimpleNamespace(
+            track_thresh=0.5,
+            track_buffer=30
+        )
+        self.tracker = BYTETracker(args, frame_rate=30)
         self.img_size = (360, 640)  
         self.info_imgs = (360, 640) 
         super().__init__('zed_object_tracker')
