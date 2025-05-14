@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+resource/zed-object-tracker
+zed_object_tracker/__init__.py
+zed_object_tracker/detect.py
+zed_object_tracker.egg-info/PKG-INFO
+zed_object_tracker.egg-info/SOURCES.txt
+zed_object_tracker.egg-info/dependency_links.txt
+zed_object_tracker.egg-info/entry_points.txt
+zed_object_tracker.egg-info/requires.txt
+zed_object_tracker.egg-info/top_level.txt
+zed_object_tracker.egg-info/zip-safe

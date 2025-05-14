@@ -1,0 +1,24 @@
+[0.779s] Invoking command in '/home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker': PYTHONPATH=/home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/build --no-deps symlink_data
+[1.060s] running develop
+[1.161s] running egg_info
+[1.161s] creating zed_object_tracker.egg-info
+[1.161s] writing zed_object_tracker.egg-info/PKG-INFO
+[1.162s] writing dependency_links to zed_object_tracker.egg-info/dependency_links.txt
+[1.162s] writing entry points to zed_object_tracker.egg-info/entry_points.txt
+[1.162s] writing requirements to zed_object_tracker.egg-info/requires.txt
+[1.162s] writing top-level names to zed_object_tracker.egg-info/top_level.txt
+[1.162s] writing manifest file 'zed_object_tracker.egg-info/SOURCES.txt'
+[1.163s] reading manifest file 'zed_object_tracker.egg-info/SOURCES.txt'
+[1.164s] writing manifest file 'zed_object_tracker.egg-info/SOURCES.txt'
+[1.230s] running build_ext
+[1.230s] Creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/lib/python3.10/site-packages/zed-object-tracker.egg-link (link to .)
+[1.231s] Installing detect script to /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/lib/zed-object-tracker
+[1.231s] 
+[1.231s] Installed /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker
+[1.231s] running symlink_data
+[1.231s] creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index
+[1.231s] creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index/resource_index
+[1.231s] creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index/resource_index/packages
+[1.231s] symbolically linking /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/resource/zed-object-tracker -> /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index/resource_index/packages
+[1.232s] symbolically linking /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/package.xml -> /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/zed-object-tracker
+[1.252s] Invoked command in '/home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker' returned '0': PYTHONPATH=/home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/build --no-deps symlink_data

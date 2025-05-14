@@ -1,0 +1,9 @@
+source;share/zed-object-tracker/hook/pythonpath.ps1
+source;share/zed-object-tracker/hook/pythonpath.dsv
+source;share/zed-object-tracker/hook/pythonpath.sh
+source;share/zed-object-tracker/hook/ament_prefix_path.ps1
+source;share/zed-object-tracker/hook/ament_prefix_path.dsv
+source;share/zed-object-tracker/hook/ament_prefix_path.sh
+source;../../build/zed-object-tracker/share/zed-object-tracker/hook/pythonpath_develop.ps1
+source;../../build/zed-object-tracker/share/zed-object-tracker/hook/pythonpath_develop.dsv
+source;../../build/zed-object-tracker/share/zed-object-tracker/hook/pythonpath_develop.sh

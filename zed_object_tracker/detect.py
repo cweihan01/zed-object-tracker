@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from zed_msgs.msg import ObjectsStamped
+from std_msgs.msg import Header
 import torch
 import numpy as np 
 # because NP 1.20+ removed np.float and byteTracker uses it, we alias it to np.float64
@@ -15,7 +16,7 @@ class ZEDObjectTracker(Node):
             track_thresh=0.5,   # confidence threshold for tracking a bounding box
             track_buffer=30,    # how many frames to keep in the buffer in case of occlusion
             match_thresh=0.8,   # confidence threshold for matching a bounding box to earlier ones for consistent ID-ing
-            mot20=False,        # we aer not using the MOT20 dataset
+            mot20=False,        # we are not using the MOT20 dataset
             min_box_area=10,    # minimum area of a bounding box to be considered for tracking
         )
         self.tracker = BYTETracker(args, frame_rate=30)
@@ -31,6 +32,14 @@ class ZEDObjectTracker(Node):
 
     def listener_callback(self, msg):
         dets = []
+        online_targets = []
+
+        # Extract header information
+        header = msg.header
+        frame_id = header.frame_id
+        timestamp = header.stamp
+        self.get_logger().info(f"Frame ID: {frame_id} | Timestamp: {timestamp.sec}.{timestamp.nanosec} \n")
+
         for obj in msg.objects:
             # Extract confidence
             confidence = obj.confidence
@@ -66,20 +75,21 @@ class ZEDObjectTracker(Node):
             # Run tracker
             online_targets = self.tracker.update(dets_tensor, self.info_imgs, self.img_size)
 
-            for t in online_targets:
-                tlwh = t.tlwh
-                tid = t.track_id
-                score = t.score
+        for t in online_targets:
+            tlwh = t.tlwh
+            tid = t.track_id
+            score = t.score
 
-                x1, y1, w, h = tlwh
-                x2 = x1 + w
-                y2 = y1 + h
+            # Convert tlwh to x1, y1, x2, y2
+            x1, y1, w, h = tlwh
+            x2 = x1 + w
+            y2 = y1 + h
 
-                self.get_logger().info(
-                    f"[TRACK ID {tid}] Score: {score:.2f} | "
-                    f"Top-left: ({x1:.1f}, {y1:.1f}) | Bottom-right: ({x2:.1f}, {y2:.1f}) | "
-                    f"Width: {w:.1f}, Height: {h:.1f}"
-                )
+            self.get_logger().info(
+                f"[TRACK ID {tid}] Score: {score:.2f} | "
+                f"Top-left: ({x1:.1f}, {y1:.1f}) | Bottom-right: ({x2:.1f}, {y2:.1f}) | "
+                f"Width: {w:.1f}, Height: {h:.1f}"
+            )
             
 
 

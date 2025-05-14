@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating zed_object_tracker.egg-info
+writing zed_object_tracker.egg-info/PKG-INFO
+writing dependency_links to zed_object_tracker.egg-info/dependency_links.txt
+writing entry points to zed_object_tracker.egg-info/entry_points.txt
+writing requirements to zed_object_tracker.egg-info/requires.txt
+writing top-level names to zed_object_tracker.egg-info/top_level.txt
+writing manifest file 'zed_object_tracker.egg-info/SOURCES.txt'
+reading manifest file 'zed_object_tracker.egg-info/SOURCES.txt'
+writing manifest file 'zed_object_tracker.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/lib/python3.10/site-packages/zed-object-tracker.egg-link (link to .)
+Installing detect script to /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/lib/zed-object-tracker
+
+Installed /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker
+running symlink_data
+creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index
+creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index/resource_index
+creating /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index/resource_index/packages
+symbolically linking /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/resource/zed-object-tracker -> /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/ament_index/resource_index/packages
+symbolically linking /home/camera_workspace/src/zed-object-tracker/build/zed-object-tracker/package.xml -> /home/camera_workspace/src/zed-object-tracker/install/zed-object-tracker/share/zed-object-tracker

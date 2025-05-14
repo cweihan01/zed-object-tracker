@@ -1,0 +1,3 @@
+[console_scripts]
+detect = zed_object_tracker.detect:main
+
